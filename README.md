@@ -1,0 +1,2 @@
+Free Code Camp Nightlife Coordination App built based on Jordan Sobovitch's project for personal education purposes only.
+All credit is due to Jordan Sobovitch's original work, and I do not claim any of this project's work as my own.

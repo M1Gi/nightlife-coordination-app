@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Titillium+Web');
+
+$main-color: darkslateblue;
+$trans-time: 0.2s;
+
+html * {
+        font-family: 'Raleway', sans-serif;
+        background-color: $main-color;
+        color: white;
+        text-align: center;
+        transition: border-color $trans-time ease-out, color $trans-time ease;
+        outline: none;
+    }
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.box-shadow-mobile {
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.header {
+    margin: 30px auto;
+}
+
+img {
+    user-select: none;
+    height: 50px;
+    width: 50px;
+    &.github {
+        margin-left: 5px;
+        animation: github-spin 5s ease-in-out infinite;
+        transition: background-color $trans-time ease, box-shadow $trans-time ease;
+        border-radius: 50px;
+        &:hover {
+            box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.3);
+            background-color: slateblue;
+        }
+        &:active {
+            background-color: lime;
+        }
+    }
+}
+
+.yelp-logo {
+    margin-left: 3px;
+    height: 25px;
+    width: auto;
+    transform: translateY(3px);
+    transition: transform 0.4s ease;
+    &:hover {
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    margin-top: 50px;
+}
+
+.app {
+    margin: auto;
+    max-width: 900px;
+}
+
+.input-container {
+        display: flex;
+    }
+
+.location-input {
+    color: lime;
+    text-align: left;
+    flex: 5;
+    padding: 10px 20px;
+    border: 3px solid white;
+    border-radius: 5px;
+    font-size: 22px;
+    margin-right: 10px;
+    transition: box-shadow $trans-time ease-out;
+    &:hover {
+        border-color: yellow;
+    }
+    &:focus {
+        box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+button {
+    @extend .box-shadow-mobile;
+    cursor: pointer;
+    color: lime;
+    border: 3px solid white;
+    border-radius: 5px;
+    background-color: $main-color;
+    padding: 10px;
+    &:hover {
+        border-color: yellow;
+    }
+    &:active {
+        border-color: lime;
+    }
+    &.go-button {
+        font-size: 16px;
+        flex: 1;
+    }
+    &.going-button {
+        margin-left: 10px;
+        font-size: 14px;
+        padding: 3px 10px;
+    }
+}
+
+span.number-going {
+    font-family: 'Titillium Web', sans-serif;
+    margin-right: 10px;
+}
+
+span.current {
+	color: yellow;
+}
+
+.bar-card {
+    @extend .box-shadow-mobile;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+.bar-image-link {
+    align-self: flex-start
+}
+
+.bar-image {
+    @extend .box-shadow-mobile;
+    margin-right: 20px;
+    height: 70px;
+    width: 70px;
+    border: 3px solid white;
+    border-radius: 10px;
+    object-fit: cover;
+    &:hover {
+        border-color: yellow;
+    }
+    &:active {
+        border-color: lime;
+    }
+}
+
+.bar-info {
+    font-size: 16px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.bar-info-name {
+    font-size: 16px;
+    flex: 1;
+    align-self: center;
+}
+
+.bar-info-item {
+    font-size: 14px;
+    flex: 1;
+    align-self: center;
+}
+
+.bars-enter {
+    opacity: 0.01;
+    transform: translate(-100%);
+    transition: all 200ms ease;
+}
+
+.bars-enter.bars-enter-active {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.bars-leave {
+    opacity: 1;
+    transform: translate(0);
+    transition: all 200ms ease;
+}
+
+.bars-leave.bars-leave-active {
+    opacity: 0.01;
+    transform: translate(100%);
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes github-spin {
+    0% {transform:rotate(0deg);}
+    90% {transform:rotate(0deg);}
+    92% {transform:rotate(10deg);}
+    94% {transform:rotate(-10deg);}
+    96% {transform:rotate(10deg);}
+    98% {transform:rotate(-10deg);}
+    100% {transform:rotate(0deg);}
+}
+
+.spinning-gear {
+    border-radius: 50px;
+    margin-top: 50px;
+    background-color: transparent;
+    animation: spin 2s linear infinite;
+}
+
+.buffer {
+    margin: auto;
+    width: auto;
+    height: 10px;
+}
+
+@media screen and (min-width: 700px) {
+    
+    @keyframes spin {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(360deg);}
+    }
+
+    @keyframes github-spin {
+        0% {transform:rotate(0deg);}
+        90% {transform:rotate(0deg);}
+        92% {transform:rotate(10deg);}
+        94% {transform:rotate(-10deg);}
+        96% {transform:rotate(10deg);}
+        98% {transform:rotate(-10deg);}
+        100% {transform:rotate(0deg);}
+    }
+
+    .buffer {
+        margin: auto;
+        width: auto;
+        height: 20px;
+    }
+
+    .spinning-gear {
+        border-radius: 50px;
+        margin-top: 50px;
+        background-color: transparent;
+        animation: spin 2s linear infinite;
+    }
+
+    .box-shadow {
+        box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    img {
+        user-select: none;
+        height: 50px;
+        width: 50px;
+        &.github {
+            animation: github-spin 5s ease-in-out infinite;
+            transition: background-color $trans-time ease, box-shadow $trans-time ease;
+            border-radius: 50px;
+            &:hover {
+                box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.3);
+                background-color: slateblue;
+            }
+            &:active {
+                background-color: lime;
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 50px;
+    }
+
+    .app {
+        margin: auto;
+        max-width: 900px;
+    }
+
+    .input-container {
+        display: flex;
+    }
+
+    .location-input {
+        color: lime;
+        text-align: left;
+        flex: 5;
+        padding: 10px 20px;
+        border: 3px solid white;
+        border-radius: 5px;
+        font-size: 22px;
+        margin-right: 10px;
+        transition: box-shadow $trans-time ease-out;
+        &:hover {
+            border-color: yellow;
+        }
+        &:focus {
+            box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 6px 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+
+    button {
+        @extend .box-shadow;
+        color: lime;
+        border: 3px solid white;
+        border-radius: 5px;
+        background-color: $main-color;
+        padding: 10px;
+        &:hover {
+            border-color: yellow;
+        }
+        &:active {
+            border-color: lime;
+        }
+        &.go-button {
+            font-size: 22px;
+            flex: 1;
+        }
+        &.going-button {
+            margin-left: 20px;
+            font-size: 22px;
+            padding: 3px 20px;
+        }
+    }
+
+    span.number-going {
+        font-family: 'Titillium Web', sans-serif;
+        margin-right: 10px;
+    }
+
+    .bar-card {
+        @extend .box-shadow;
+        overflow: hidden;
+        padding: 10px;
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: flex-start;
+
+        width: auto;
+        height: auto;
+        font-size: 18px;
+        border: 2px solid transparent;
+        border-radius: 10px;
+    }
+
+    .bar-image-link {
+        align-self: flex-start
+    }
+
+    .bar-image {
+        @extend .box-shadow;
+        margin-right: 20px;
+        height: 150px;
+        width: 150px;
+        border: 3px solid white;
+        border-radius: 10px;
+        object-fit: cover;
+        &:hover {
+            border-color: yellow;
+        }
+        &:active {
+            border-color: lime;
+        }
+    }
+
+    .bar-info {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .bar-info-name {
+        font-size: 26px;
+        flex: 1;
+        align-self: center;
+    }
+
+    .bar-info-item {
+        font-size: 22px;
+        flex: 1;
+        align-self: center;
+    }
+
+    .bars-enter {
+        opacity: 0.01;
+        transform: translate(-100%);
+        transition: all 200ms ease;
+    }
+
+    .bars-enter.bars-enter-active {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+    .bars-leave {
+        opacity: 1;
+        transform: translate(0);
+        transition: all 200ms ease;
+    }
+
+    .bars-leave.bars-leave-active {
+        opacity: 0.01;
+        transform: translate(100%);
+    }
+}
